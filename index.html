@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover-in-out UNO</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        console.log("= = = JQuery loaded = = =");
+
+        $("img").hover(
+          function () {
+            // console.log($(this), "<--- IN");
+            $(this).attr("src", $(this).attr("backSide"));
+          },
+          function () {
+            // console.log($(this), "---> OUT");
+            $(this).attr("src", $(this).attr("oG"));
+          }
+        );
+      });
+    </script>
+    <style>
+      * {
+        /* outline: 1px solid red; */
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        width: 90%;
+        margin: 0 auto;
+      }
+      h1 {
+        margin-top: 20px;
+        text-align: center;
+        border-bottom: 1px solid gray;
+      }
+      p {
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      div.cards {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      img {
+        width: 200px;
+        border: 1px solid gray;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>UNO hover-in hover out - Simple JQuery</h1>
+      </div>
+      <p>hover over the UNO cards to see what you get 🎲</p>
+      <div class="cards">
+        <img
+          src="./images/uno_back.png"
+          oG="./images/uno_back.png"
+          backSide="./images/uno1.png"
+          alt="uno card"
+        />
+        <img
+          src="./images/uno_back.png"
+          oG="./images/uno_back.png"
+          backSide="./images/uno2.png"
+          alt="uno card"
+        />
+        <img
+          src="./images/uno_back.png"
+          oG="./images/uno_back.png"
+          backSide="./images/uno3.png"
+          alt="uno card"
+        />
+        <img
+          src="./images/uno_back.png"
+          oG="./images/uno_back.png"
+          backSide="./images/uno4.png"
+          alt="uno card"
+        />
+      </div>
+    </div>
+  </body>
+</html>
